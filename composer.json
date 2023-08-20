@@ -1,0 +1,25 @@
+{
+    "name": "puleeno-cms/layout",
+    "description": "The master layout and layout manager for puleeno",
+    "autoload": {
+        "psr-4": {
+            "PuleenoCMS\\Layout\\": "src/"
+        },
+        "files": [
+            "./functions.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "Puleeno Nguyen",
+            "email": "puleeno@gmail.com"
+        }
+    ],
+    "require": {},
+    "config": {
+        "vendor-dir": "libs"
+    },
+    "extension-class": "\\PuleenoCMS\\Layout\\LayoutExtension",
+    "filter-hooks": [],
+    "action-hooks": []
+}
