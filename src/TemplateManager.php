@@ -38,7 +38,7 @@ final class TemplateManager
         );
 
         $twigSettings = [];
-        if (getenv('VIEW_DEBUG') !== true) {
+        if (!boolval(getenv('VIEW_DEBUG'))) {
             $twigSettings['cache'] = getPath('cache') . DIRECTORY_SEPARATOR . 'views';
         }
         $this->twig = Twig::create([$layoutViewDirectory], $twigSettings);
