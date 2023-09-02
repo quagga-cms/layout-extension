@@ -38,14 +38,11 @@ class TwigMiddleware implements MiddlewareInterface
      */
     public static function createFromContainer(App $app, string $containerKey = 'view'): self
     {
-
         $container = $app->getContainer();
-        var_dump($containerKey);
-
         if ($container === null) {
             throw new RuntimeException('The app does not have a container.');
         }
-        var_dump($container->has($containerKey));
+
         if (!$container->has($containerKey)) {
             throw new RuntimeException(
                 "The specified container key does not exist: $containerKey"

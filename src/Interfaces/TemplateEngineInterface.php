@@ -11,4 +11,8 @@ interface TemplateEngineInterface extends ArrayAccess
     public function addPath($paths): self;
 
     public function render(ResponseInterface $response, string $template, array $data = []): ResponseInterface;
+
+    public function getAllowedExtensions(): ?array;
+
+    public function getDefaultExtension(): string;
 }

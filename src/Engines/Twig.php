@@ -10,6 +10,8 @@ declare(strict_types=1);
 
 namespace PuleenoCMS\Layout\Engines;
 
+use App\Core\HookManager;
+use App\Exceptions\InvalidTemplateException;
 use ArrayAccess;
 use ArrayIterator;
 use Psr\Http\Message\ResponseInterface;
@@ -130,6 +132,19 @@ class Twig extends TemplateEngine
         return $this->setPaths(array_unique($paths));
     }
 
+    public function getAllowedExtensions(): ?array
+    {
+        return HookManager::applyFilters(
+            'twig_engine_extensions',
+            ['twig', 'html']
+        );
+    }
+
+    public function getDefaultExtension(): string
+    {
+        return HookManager::applyFilters('twig_extension', 'twig');
+    }
+
     /**
      * Proxy method to add an extension to the Twig environment
      *
@@ -150,6 +165,19 @@ class Twig extends TemplateEngine
         $this->environment->addRuntimeLoader($runtimeLoader);
     }
 
+    protected function resolveTemplateName($template): string
+    {
+        if (strpos($template, '.') === false) {
+            return sprintf('%s.%s', $template, $this->getDefaultExtension());
+        }
+
+        $templateArr = explode('.', $template);
+        if (empty($this->getAllowedExtensions()) || in_array(end($templateArr), $this->getAllowedExtensions())) {
+            return $template;
+        }
+        throw new InvalidTemplateException('The extension .' . end($templateArr) . ' is not allowed in Twig template engine');
+    }
+
     /**
      * Fetch rendered template
      *
@@ -166,7 +194,10 @@ class Twig extends TemplateEngine
     {
         $data = array_merge($this->defaultVariables, $data);
 
-        return $this->environment->render($template, $data);
+        return $this->environment->render(
+            $this->resolveTemplateName($template),
+            $data
+        );
     }
 
     /**

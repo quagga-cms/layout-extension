@@ -36,9 +36,12 @@ final class TemplateManager
             str_replace('/', DIRECTORY_SEPARATOR, '%s/resources/views'),
             dirname(__DIR__)
         );
-        $this->twig = Twig::create([$layoutViewDirectory], [
-            'cache' => getPath('cache') . DIRECTORY_SEPARATOR . 'views',
-        ]);
+
+        $twigSettings = [];
+        if (getenv('VIEW_DEBUG') !== true) {
+            $twigSettings['cache'] = getPath('cache') . DIRECTORY_SEPARATOR . 'views';
+        }
+        $this->twig = Twig::create([$layoutViewDirectory], $twigSettings);
 
         // Set view in Container
         /**
