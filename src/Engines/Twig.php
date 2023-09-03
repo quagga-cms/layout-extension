@@ -29,6 +29,7 @@ use Twig\Extension\ExtensionInterface;
 use Twig\Loader\FilesystemLoader;
 use Twig\Loader\LoaderInterface;
 use Twig\RuntimeLoader\RuntimeLoaderInterface;
+use Twig\TwigFunction;
 
 use function array_key_exists;
 use function array_merge;
@@ -355,5 +356,12 @@ class Twig extends TemplateEngine
     public function getIterator(): ArrayIterator
     {
         return new ArrayIterator($this->defaultVariables);
+    }
+
+    public function registerFunction($functionName, $callable, $options = [])
+    {
+        $this->environment->addFunction(
+            new TwigFunction($functionName, $callable, $options)
+        );
     }
 }

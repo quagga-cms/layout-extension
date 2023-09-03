@@ -15,4 +15,6 @@ interface TemplateEngineInterface extends ArrayAccess
     public function getAllowedExtensions(): ?array;
 
     public function getDefaultExtension(): string;
+
+    public function registerFunction($functionName, $callable);
 }

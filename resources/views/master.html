@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html lang="{{ get_option('language', 'en-US') }}">
+    <head>
+        <title>{{ apply_filters('title', get_option('site_name', 'Puleeno CMS')) }}</title>
+        {{ do_action('head') }}
+    </head>
+    <body>
+        {{ do_action('footer') }}
+    </body>
+</html>

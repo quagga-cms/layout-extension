@@ -2,12 +2,12 @@
 
 namespace PuleenoCMS\Layout;
 
+use App\Common\Option;
 use App\Core\Application;
-use DI\Container;
+use App\Core\HookManager;
 use PuleenoCMS\Exceptions\ContainerException;
 use PuleenoCMS\Layout\Abstracts\TemplateEngine;
 use PuleenoCMS\Layout\Engines\Twig;
-use Slim\Views\TwigMiddleware;
 
 final class TemplateManager
 {
@@ -30,6 +30,13 @@ final class TemplateManager
         return static::$instance;
     }
 
+    protected function registerFunctions()
+    {
+        $this->twig->registerFunction('do_action', [HookManager::class, 'executeAction']);
+        $this->twig->registerFunction('apply_filters', [HookManager::class, 'applyFilters']);
+        $this->twig->registerFunction('get_option', [Option::class, 'getOption']);
+    }
+
     public function createView()
     {
         $layoutViewDirectory = sprintf(
@@ -40,8 +47,11 @@ final class TemplateManager
         $twigSettings = [];
         if (!boolval(getenv('VIEW_DEBUG'))) {
             $twigSettings['cache'] = getPath('cache') . DIRECTORY_SEPARATOR . 'views';
+            $twigSettings['debug'] = true;
         }
         $this->twig = Twig::create([$layoutViewDirectory], $twigSettings);
+
+        $this->registerFunctions();
 
         // Set view in Container
         /**
