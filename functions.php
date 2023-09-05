@@ -34,7 +34,7 @@ function extensionView($extName, $templateName, $data = [], ResponseInterface $r
 {
     $templateEngine = TemplateManager::getView();
     $directoryTempl = str_replace('/', DIRECTORY_SEPARATOR, '%s/%s/resources/views');
-    $viewDirectory  = sprintf($directoryTempl, getPath('extension'), $extName);
+    $viewDirectory  = sprintf($directoryTempl, get_path('extension'), $extName);
 
     $templateEngine->addPath($viewDirectory);
     $templateEngine->addPath(getThemeViewDirectory());
@@ -45,7 +45,7 @@ function extensionView($extName, $templateName, $data = [], ResponseInterface $r
 function getThemeViewDirectory()
 {
     $directoryTempl = str_replace('/', DIRECTORY_SEPARATOR, '%s/%s/views');
-    $viewDirectory  = sprintf($directoryTempl, getPath('theme'), Option::getInstance()->get('theme'));
+    $viewDirectory  = sprintf($directoryTempl, get_path('theme'), Option::getInstance()->get('theme'));
 
     return $viewDirectory;
 }

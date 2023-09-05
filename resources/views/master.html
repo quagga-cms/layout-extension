@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html lang="{{ get_option('language', 'en-US') }}">
     <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1" />
         <title>{{ apply_filters('title', get_option('site_name', 'Puleeno CMS')) }}</title>
         {{ do_action('head') }}
+        <meta name="theme-color" content="#226DAA" />
+        <link rel="canonical" href="{{ url_for('dashboardTop') }}" />
     </head>
     <body>
         {{ do_action('footer') }}

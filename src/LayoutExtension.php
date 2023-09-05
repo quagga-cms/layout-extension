@@ -4,7 +4,6 @@ namespace PuleenoCMS\Layout;
 
 use App\Core\Extension;
 use App\Core\HookManager;
-use PuleenoCMS\Layout\Middlewares\TwigMiddleware;
 
 class LayoutExtension extends Extension
 {
@@ -20,11 +19,15 @@ class LayoutExtension extends Extension
             'loaded_extensions',
             [$templateManager, 'createView']
         );
+
+        HookManager::addAction(
+            'loaded_extensions',
+            [$templateManager, 'loadMiddlewares'],
+            99
+        );
     }
 
     public function run()
     {
-        // Add Twig-View Middleware
-        $this->app->add(TwigMiddleware::createFromContainer($this->app));
     }
 }

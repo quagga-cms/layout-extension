@@ -8,6 +8,7 @@ use App\Core\HookManager;
 use PuleenoCMS\Exceptions\ContainerException;
 use PuleenoCMS\Layout\Abstracts\TemplateEngine;
 use PuleenoCMS\Layout\Engines\Twig;
+use PuleenoCMS\Layout\Middlewares\TwigMiddleware;
 
 final class TemplateManager
 {
@@ -46,7 +47,7 @@ final class TemplateManager
 
         $twigSettings = [];
         if (!boolval(getenv('VIEW_DEBUG'))) {
-            $twigSettings['cache'] = getPath('cache') . DIRECTORY_SEPARATOR . 'views';
+            $twigSettings['cache'] = get_path('cache') . DIRECTORY_SEPARATOR . 'views';
             $twigSettings['debug'] = true;
         }
         $this->twig = Twig::create([$layoutViewDirectory], $twigSettings);
@@ -67,5 +68,10 @@ final class TemplateManager
             throw new ContainerException();
         }
         return static::$app->getContainer()->get('view');
+    }
+
+    public function loadMiddlewares()
+    {
+        self::$app->add(TwigMiddleware::createFromContainer(self::$app));
     }
 }
