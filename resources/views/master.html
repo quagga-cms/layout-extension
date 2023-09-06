@@ -9,6 +9,9 @@
         <link rel="canonical" href="{{ url_for('dashboardTop') }}" />
     </head>
     <body>
+        {{ do_action('start_body') }}
+        {% block body %}
+        {% endblock %}
         {{ do_action('footer') }}
     </body>
 </html>
