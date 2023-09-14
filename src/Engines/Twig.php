@@ -254,6 +254,13 @@ class Twig extends TemplateEngine
      */
     public function render(ResponseInterface $response, string $template, array $data = []): ResponseInterface
     {
+        HookManager::executeAction(
+            'twig_before_render',
+            $response,
+            $template,
+            $data
+        );
+
         if ($this->loader instanceof FilesystemLoader) {
             $paths = array_reverse($this->paths);
             foreach ($paths as $namespace => $path) {
@@ -266,6 +273,14 @@ class Twig extends TemplateEngine
         }
 
         $response->getBody()->write($this->fetch($template, $data));
+
+        HookManager::executeAction(
+            'twig_after_render',
+            $response,
+            $template,
+            $data
+        );
+
         return $response;
     }
 
