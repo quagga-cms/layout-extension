@@ -4,6 +4,7 @@ namespace PuleenoCMS\Layout;
 
 use App\Common\Option;
 use App\Core\Application;
+use App\Core\Helper;
 use App\Core\HookManager;
 use PuleenoCMS\Exceptions\ContainerException;
 use PuleenoCMS\Layout\Abstracts\TemplateEngine;
@@ -36,6 +37,7 @@ final class TemplateManager
         $this->twig->registerFunction('do_action', [HookManager::class, 'executeAction']);
         $this->twig->registerFunction('apply_filters', [HookManager::class, 'applyFilters']);
         $this->twig->registerFunction('get_option', [Option::class, 'getOption']);
+        $this->twig->registerFunction('is_dashboard', [Helper::class, 'isDashboard']);
     }
 
     public function createView()
