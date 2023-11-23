@@ -42,17 +42,12 @@ final class TemplateManager
 
     public function createView()
     {
-        $layoutViewDirectory = sprintf(
-            str_replace('/', DIRECTORY_SEPARATOR, '%s/resources/views'),
-            dirname(__DIR__)
-        );
-
         $twigSettings = [];
         if (!boolval(getenv('VIEW_DEBUG'))) {
             $twigSettings['cache'] = get_path('cache') . DIRECTORY_SEPARATOR . 'views';
             $twigSettings['debug'] = true;
         }
-        $this->twig = Twig::create([$layoutViewDirectory], $twigSettings);
+        $this->twig = Twig::create([], $twigSettings);
 
         $this->registerFunctions();
 
@@ -66,10 +61,20 @@ final class TemplateManager
 
     public static function getView(): ?TemplateEngine
     {
-        if (is_null(static::$instance)) {
+        if (is_null(static::$instance) || !static::$app->getContainer()->has('view')) {
             throw new ContainerException();
         }
-        return static::$app->getContainer()->get('view');
+        /**
+         * @var \PuleenoCMS\Layout\Interfaces\TemplateEngineInterface
+         */
+        $engine = static::$app->getContainer()->get('view');
+        $layoutViewDirectory = sprintf(
+            str_replace('/', DIRECTORY_SEPARATOR, '%s/resources/views'),
+            dirname(__DIR__)
+        );
+        $engine->addPath($layoutViewDirectory);
+
+        return $engine;
     }
 
     public function loadMiddlewares()

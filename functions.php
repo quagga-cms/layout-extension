@@ -38,7 +38,6 @@ function extensionView($extName, $templateName, $data = [], ResponseInterface $r
     $viewDirectory  = sprintf($directoryTempl, get_path('extension'), $extName);
 
     $templateEngine->addPath($viewDirectory);
-    $templateEngine->addPath(getThemeViewDirectory());
 
     return view($templateName, $data, $response, 'ext');
 }
@@ -59,8 +58,5 @@ function getThemeViewDirectory()
 
 function themeView($templateName, $data = [], ResponseInterface $response = null): ResponseInterface
 {
-    $templateEngine = TemplateManager::getView();
-    $templateEngine->addPath(getThemeViewDirectory());
-
     return view($templateName, $data, $response, 'theme');
 }

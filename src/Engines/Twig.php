@@ -261,6 +261,11 @@ class Twig extends TemplateEngine
             $data
         );
 
+        // Theme template has highest priority
+        if (function_exists('getThemeViewDirectory')) {
+            $this->loader->addPath(getThemeViewDirectory());
+        }
+
         if ($this->loader instanceof FilesystemLoader) {
             $paths = array_reverse($this->paths);
             foreach ($paths as $namespace => $path) {
