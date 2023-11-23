@@ -44,16 +44,14 @@ function extensionView($extName, $templateName, $data = [], ResponseInterface $r
 
 function getThemeViewDirectory()
 {
-    $activedTheme   = Env::get('ACTIVATE_THEME');
+    $activeTheme    = get_active_theme();
     $directoryTempl = str_replace('/', DIRECTORY_SEPARATOR, '%s/%s/views');
 
-    $viewDirectory = sprintf(
+    return sprintf(
         $directoryTempl,
         get_path('theme'),
-        !empty($activedTheme) ? $activedTheme : Env::get('activate_theme')
+        $activeTheme
     );
-
-    return $viewDirectory;
 }
 
 function themeView($templateName, $data = [], ResponseInterface $response = null): ResponseInterface
