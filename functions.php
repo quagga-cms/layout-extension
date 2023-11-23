@@ -2,6 +2,7 @@
 
 use App\Common\Option;
 use App\Core\Application;
+use App\Core\Env;
 use Psr\Http\Message\ResponseInterface;
 use PuleenoCMS\Layout\TemplateManager;
 
@@ -44,8 +45,14 @@ function extensionView($extName, $templateName, $data = [], ResponseInterface $r
 
 function getThemeViewDirectory()
 {
+    $activedTheme   = Env::get('ACTIVATE_THEME');
     $directoryTempl = str_replace('/', DIRECTORY_SEPARATOR, '%s/%s/views');
-    $viewDirectory  = sprintf($directoryTempl, get_path('theme'), Option::getInstance()->get('theme'));
+
+    $viewDirectory = sprintf(
+        $directoryTempl,
+        get_path('theme'),
+        !empty($activedTheme) ? $activedTheme : Env::get('activate_theme')
+    );
 
     return $viewDirectory;
 }
