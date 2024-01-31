@@ -1,9 +1,9 @@
 {
-    "name": "puleeno-cms/layout",
-    "description": "The master layout and layout manager for puleeno",
+    "name": "jackal-cms/layout",
+    "description": "The master layout and layout manager for jackal",
     "autoload": {
         "psr-4": {
-            "PuleenoCMS\\Layout\\": "src/"
+            "Jackal\\Extension\\Layout\\": "src/"
         },
         "files": [
             "./functions.php"
@@ -19,7 +19,7 @@
     "config": {
         "vendor-dir": "libs"
     },
-    "extension-class": "\\PuleenoCMS\\Layout\\LayoutExtension",
+    "extension-class": "\\Jackal\\Extension\\Layout\\LayoutExtension",
     "filter-hooks": [],
     "action-hooks": []
 }

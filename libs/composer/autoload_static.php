@@ -13,12 +13,12 @@ class ComposerStaticInitf2e85b2a4ff3ca937e681ca063d2e253
     public static $prefixLengthsPsr4 = array (
         'P' =>
         array (
-            'PuleenoCMS\\Layout\\' => 18,
+            'Jackal\Extension\\Layout\\' => 18,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'PuleenoCMS\\Layout\\' =>
+        'Jackal\Extension\\Layout\\' =>
         array (
             0 => __DIR__ . '/../..' . '/src',
         ),

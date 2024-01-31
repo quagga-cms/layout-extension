@@ -1,6 +1,6 @@
 <?php
 
-namespace PuleenoCMS\Layout\Interfaces;
+namespace Jackal\Extension\Layout\Interfaces;
 
 use ArrayAccess;
 use Psr\Http\Message\ResponseInterface;

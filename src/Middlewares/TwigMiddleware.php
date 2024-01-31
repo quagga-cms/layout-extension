@@ -8,13 +8,13 @@
 
 declare(strict_types=1);
 
-namespace PuleenoCMS\Layout\Middlewares;
+namespace Jackal\Extension\Layout\Middlewares;
 
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\MiddlewareInterface;
 use Psr\Http\Server\RequestHandlerInterface;
-use PuleenoCMS\Layout\Engines\Twig;
+use Jackal\Extension\Layout\Engines\Twig;
 use RuntimeException;
 use Slim\App;
 use Slim\Interfaces\RouteParserInterface;

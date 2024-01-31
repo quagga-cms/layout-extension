@@ -1,8 +1,8 @@
 <?php
 
-namespace PuleenoCMS\Layout\Abstracts;
+namespace Jackal\Extension\Layout\Abstracts;
 
-use PuleenoCMS\Layout\Interfaces\TemplateEngineInterface;
+use Jackal\Extension\Layout\Interfaces\TemplateEngineInterface;
 
 abstract class TemplateEngine implements TemplateEngineInterface
 {

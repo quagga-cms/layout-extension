@@ -1,6 +1,6 @@
 <?php
 
-namespace PuleenoCMS\Layout;
+namespace Jackal\Extension\Layout;
 
 use App\Core\Extension;
 use App\Core\HookManager;

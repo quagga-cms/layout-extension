@@ -1,15 +1,15 @@
 <?php
 
-namespace PuleenoCMS\Layout;
+namespace Jackal\Extension\Layout;
 
 use App\Common\Option;
 use App\Core\Application;
 use App\Core\Helper;
 use App\Core\HookManager;
-use PuleenoCMS\Exceptions\ContainerException;
-use PuleenoCMS\Layout\Abstracts\TemplateEngine;
-use PuleenoCMS\Layout\Engines\Twig;
-use PuleenoCMS\Layout\Middlewares\TwigMiddleware;
+use Jackal\Extension\Exceptions\ContainerException;
+use Jackal\Extension\Layout\Abstracts\TemplateEngine;
+use Jackal\Extension\Layout\Engines\Twig;
+use Jackal\Extension\Layout\Middlewares\TwigMiddleware;
 
 final class TemplateManager
 {
@@ -65,7 +65,7 @@ final class TemplateManager
             throw new ContainerException();
         }
         /**
-         * @var \PuleenoCMS\Layout\Interfaces\TemplateEngineInterface
+         * @var \Jackal\Extension\Layout\Interfaces\TemplateEngineInterface
          */
         $engine = static::$app->getContainer()->get('view');
         $layoutViewDirectory = sprintf(

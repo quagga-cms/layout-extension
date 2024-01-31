@@ -4,7 +4,7 @@ use App\Common\Option;
 use App\Core\Application;
 use App\Core\Env;
 use Psr\Http\Message\ResponseInterface;
-use PuleenoCMS\Layout\TemplateManager;
+use Jackal\Extension\Layout\TemplateManager;
 
 /**
  * Undocumented function

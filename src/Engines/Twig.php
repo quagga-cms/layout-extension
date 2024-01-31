@@ -8,7 +8,7 @@
 
 declare(strict_types=1);
 
-namespace PuleenoCMS\Layout\Engines;
+namespace Jackal\Extension\Layout\Engines;
 
 use App\Core\HookManager;
 use App\Exceptions\InvalidTemplateException;
@@ -16,7 +16,7 @@ use ArrayAccess;
 use ArrayIterator;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
-use PuleenoCMS\Layout\Abstracts\TemplateEngine;
+use Jackal\Extension\Layout\Abstracts\TemplateEngine;
 use ReturnTypeWillChange;
 use RuntimeException;
 use Slim\Views\TwigExtension;
