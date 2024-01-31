@@ -7,18 +7,18 @@ namespace Composer\Autoload;
 class ComposerStaticInitf2e85b2a4ff3ca937e681ca063d2e253
 {
     public static $files = array (
-        'd90759aa51394cd9815bdd3d1f0723ee' => __DIR__ . '/../..' . '/functions.php',
+        'ef7feef36e23807bccc39dd19f5427b2' => __DIR__ . '/../..' . '/functions.php',
     );
 
     public static $prefixLengthsPsr4 = array (
-        'P' =>
+        'J' => 
         array (
-            'Jackal\Extension\\Layout\\' => 18,
+            'Jackal\\Extension\\Layout\\' => 24,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'Jackal\Extension\\Layout\\' =>
+        'Jackal\\Extension\\Layout\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
         ),
@@ -34,6 +34,7 @@ class ComposerStaticInitf2e85b2a4ff3ca937e681ca063d2e253
             $loader->prefixLengthsPsr4 = ComposerStaticInitf2e85b2a4ff3ca937e681ca063d2e253::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInitf2e85b2a4ff3ca937e681ca063d2e253::$prefixDirsPsr4;
             $loader->classMap = ComposerStaticInitf2e85b2a4ff3ca937e681ca063d2e253::$classMap;
+
         }, null, ClassLoader::class);
     }
 }
