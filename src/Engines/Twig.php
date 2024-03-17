@@ -10,7 +10,7 @@ declare(strict_types=1);
 
 namespace Jackal\Extension\Layout\Engines;
 
-use App\Core\HookManager;
+use Jackal\Jackal\HookManager;
 use App\Exceptions\InvalidTemplateException;
 use ArrayAccess;
 use ArrayIterator;

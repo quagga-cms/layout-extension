@@ -3,9 +3,9 @@
 namespace Jackal\Extension\Layout;
 
 use App\Common\Option;
-use App\Core\Application;
-use App\Core\Helper;
-use App\Core\HookManager;
+use Jackal\Jackal\Application;
+use Jackal\Jackal\Helper;
+use Jackal\Jackal\HookManager;
 use Jackal\Extension\Exceptions\ContainerException;
 use Jackal\Extension\Layout\Abstracts\TemplateEngine;
 use Jackal\Extension\Layout\Engines\Twig;

@@ -1,8 +1,8 @@
 <?php
 
 use App\Common\Option;
-use App\Core\Application;
-use App\Core\Env;
+use Jackal\Jackal\Application;
+use Jackal\Jackal\Env;
 use Psr\Http\Message\ResponseInterface;
 use Jackal\Extension\Layout\TemplateManager;
 

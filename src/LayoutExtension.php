@@ -2,8 +2,8 @@
 
 namespace Jackal\Extension\Layout;
 
-use App\Core\Extension;
-use App\Core\HookManager;
+use Jackal\Jackal\Extension;
+use Jackal\Jackal\HookManager;
 
 class LayoutExtension extends Extension
 {
