@@ -7,11 +7,11 @@ namespace Composer\Autoload;
 class ComposerStaticInitf2e85b2a4ff3ca937e681ca063d2e253
 {
     public static $files = array (
-        'ef7feef36e23807bccc39dd19f5427b2' => __DIR__ . '/../..' . '/functions.php',
+        'bfc12b9003b8d402f0b5ce4aab5a8e4a' => __DIR__ . '/../..' . '/functions.php',
     );
 
     public static $prefixLengthsPsr4 = array (
-        'J' => 
+        'Q' => 
         array (
             'Quagga\\Extension\\Layout\\' => 24,
         ),
