@@ -1,10 +1,10 @@
 <?php
 
 use App\Common\Option;
-use Jackal\Jackal\Application;
-use Jackal\Jackal\Env;
+use Quagga\Quagga\Application;
+use Quagga\Quagga\Env;
 use Psr\Http\Message\ResponseInterface;
-use Jackal\Extension\Layout\TemplateManager;
+use Quagga\Extension\Layout\TemplateManager;
 
 /**
  * Undocumented function

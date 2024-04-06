@@ -1,9 +1,9 @@
 {
-    "name": "jackal-cms/layout",
-    "description": "The master layout and layout manager for jackal",
+    "name": "quagga-cms/layout",
+    "description": "The master layout and layout manager for quagga",
     "autoload": {
         "psr-4": {
-            "Jackal\\Extension\\Layout\\": "src/"
+            "Quagga\\Extension\\Layout\\": "src/"
         },
         "files": [
             "./functions.php"
@@ -19,7 +19,7 @@
     "config": {
         "vendor-dir": "libs"
     },
-    "extension-class": "\\Jackal\\Extension\\Layout\\LayoutExtension",
+    "extension-class": "\\Quagga\\Extension\\Layout\\LayoutExtension",
     "filter-hooks": [],
     "action-hooks": []
 }

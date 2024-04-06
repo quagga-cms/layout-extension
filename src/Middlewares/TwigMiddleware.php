@@ -8,13 +8,13 @@
 
 declare(strict_types=1);
 
-namespace Jackal\Extension\Layout\Middlewares;
+namespace Quagga\Extension\Layout\Middlewares;
 
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\MiddlewareInterface;
 use Psr\Http\Server\RequestHandlerInterface;
-use Jackal\Extension\Layout\Engines\Twig;
+use Quagga\Extension\Layout\Engines\Twig;
 use RuntimeException;
 use Slim\App;
 use Slim\Interfaces\RouteParserInterface;

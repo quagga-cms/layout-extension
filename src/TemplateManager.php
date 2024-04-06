@@ -1,15 +1,15 @@
 <?php
 
-namespace Jackal\Extension\Layout;
+namespace Quagga\Extension\Layout;
 
 use App\Common\Option;
-use Jackal\Jackal\Application;
-use Jackal\Jackal\Helper;
-use Jackal\Jackal\HookManager;
-use Jackal\Extension\Exceptions\ContainerException;
-use Jackal\Extension\Layout\Abstracts\TemplateEngine;
-use Jackal\Extension\Layout\Engines\Twig;
-use Jackal\Extension\Layout\Middlewares\TwigMiddleware;
+use Quagga\Quagga\Application;
+use Quagga\Quagga\Helper;
+use Quagga\Quagga\HookManager;
+use Quagga\Extension\Exceptions\ContainerException;
+use Quagga\Extension\Layout\Abstracts\TemplateEngine;
+use Quagga\Extension\Layout\Engines\Twig;
+use Quagga\Extension\Layout\Middlewares\TwigMiddleware;
 
 final class TemplateManager
 {
@@ -65,7 +65,7 @@ final class TemplateManager
             throw new ContainerException();
         }
         /**
-         * @var \Jackal\Extension\Layout\Interfaces\TemplateEngineInterface
+         * @var \Quagga\Extension\Layout\Interfaces\TemplateEngineInterface
          */
         $engine = static::$app->getContainer()->get('view');
         $layoutViewDirectory = sprintf(

@@ -1,2 +1,2 @@
 # layout-extension
-The based layout extension for Jackal CMS
+The based layout extension for Quagga CMS

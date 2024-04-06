@@ -1,8 +1,8 @@
 <?php
 
-namespace Jackal\Extension\Layout\Abstracts;
+namespace Quagga\Extension\Layout\Abstracts;
 
-use Jackal\Extension\Layout\Interfaces\TemplateEngineInterface;
+use Quagga\Extension\Layout\Interfaces\TemplateEngineInterface;
 
 abstract class TemplateEngine implements TemplateEngineInterface
 {

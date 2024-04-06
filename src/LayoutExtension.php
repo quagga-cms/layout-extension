@@ -1,9 +1,9 @@
 <?php
 
-namespace Jackal\Extension\Layout;
+namespace Quagga\Extension\Layout;
 
-use Jackal\Jackal\Extension;
-use Jackal\Jackal\HookManager;
+use Quagga\Quagga\Extension;
+use Quagga\Quagga\HookManager;
 
 class LayoutExtension extends Extension
 {

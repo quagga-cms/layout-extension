@@ -1,6 +1,6 @@
 <?php
 
-namespace Jackal\Extension\Layout\Interfaces;
+namespace Quagga\Extension\Layout\Interfaces;
 
 use ArrayAccess;
 use Psr\Http\Message\ResponseInterface;

@@ -8,15 +8,15 @@
 
 declare(strict_types=1);
 
-namespace Jackal\Extension\Layout\Engines;
+namespace Quagga\Extension\Layout\Engines;
 
-use Jackal\Jackal\HookManager;
+use Quagga\Quagga\HookManager;
 use App\Exceptions\InvalidTemplateException;
 use ArrayAccess;
 use ArrayIterator;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
-use Jackal\Extension\Layout\Abstracts\TemplateEngine;
+use Quagga\Extension\Layout\Abstracts\TemplateEngine;
 use ReturnTypeWillChange;
 use RuntimeException;
 use Slim\Views\TwigExtension;
