@@ -1,5 +1,5 @@
 {
-    "name": "quagga-cms/layout",
+    "name": "quagga/layout",
     "description": "The master layout and layout manager for quagga",
     "autoload": {
         "psr-4": {
