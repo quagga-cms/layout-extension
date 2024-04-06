@@ -11,7 +11,7 @@ declare(strict_types=1);
 namespace Quagga\Extension\Layout\Engines;
 
 use Quagga\Quagga\HookManager;
-use App\Exceptions\InvalidTemplateException;
+use Quagga\Quagga\Exceptions\InvalidTemplateException;
 use ArrayAccess;
 use ArrayIterator;
 use Psr\Http\Message\ResponseInterface;
